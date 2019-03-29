@@ -1,9 +1,9 @@
 ﻿using System;
-using Domain.Entities;
-using Domain.Abstract.Repos;
-using Domain.Abstract.Services;
+using App.Domain.Entities;
+using App.Domain.Abstract.Repos;
+using App.Domain.Abstract.Services;
 
-namespace Domain.Services
+namespace App.Domain.Services
 {
     public class HelloService : IHelloService
     {

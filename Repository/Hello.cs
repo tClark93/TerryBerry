@@ -1,11 +1,13 @@
-﻿{
-  "ConnectionStrings": {
-    "DefaultConnection": "DataSource=app.db"
-  },
-  "Logging": {
-    "LogLevel": {
-      "Default": "Warning"
+﻿
+using System;
+
+namespace Repository
+{
+    public class HelloService
+    {
+
+        //async method that returns helloWorld
+
+
     }
-  },
-  "AllowedHosts": "*"
 }

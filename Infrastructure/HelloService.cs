@@ -1,5 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using App.Domain.Abstract;
 using App.Domain.Entities;
 
@@ -11,6 +10,7 @@ namespace App.Infrastructure
         {
             var Response = new Hello { Text = "Hello World!" };
 
+            //Console.WriteLine("database");
             return Task.FromResult(Response);
         }
 
@@ -18,6 +18,7 @@ namespace App.Infrastructure
         {
             var Response = await GetHelloDB();
 
+            //Console.WriteLine(Response + "async");
             return Response;
         }
     }

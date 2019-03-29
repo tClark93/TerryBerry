@@ -4,42 +4,28 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
-namespace API.Controllers
+using App.Domain.Abstract;
+
+namespace App.API.Controllers
 {
+
     [Route("api/[controller]")]
     [ApiController]
-    public class ValuesController : ControllerBase
+    public class HelloController : Controller
     {
-        // GET api/values
+        private IHelloService _helloService;
+
+        public HelloController(IHelloService helloService)
+        {
+            _helloService = helloService;
+        }
+
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        async public Task<JsonResult> Get()
         {
-            return new string[] { "value1", "value2" };
-        }
+            var Result = await _helloService.GetHelloAsync();
 
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
-        {
-            return "value";
-        }
-
-        // POST api/values
-        [HttpPost]
-        public void Post([FromBody] string value)
-        {
-        }
-
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
+            return new JsonResult(Result);
         }
     }
 }

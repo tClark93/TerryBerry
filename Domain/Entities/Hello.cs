@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Domain.Entities
+namespace App.Domain.Entities
 {
     public class Hello
     {

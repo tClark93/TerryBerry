@@ -6,12 +6,11 @@
 
   <ItemGroup>
     <Compile Remove="Class1.cs" />
+    <Compile Remove="Abstract\Repos\IHelloRepo.cs" />
+    <Compile Remove="Services\HelloService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Abstract\" />
-    <Folder Include="Abstract\Services\" />
-    <Folder Include="Abstract\Repos\" />
     <Folder Include="Entities\" />
-    <Folder Include="Services\" />
   </ItemGroup>
 </Project>
